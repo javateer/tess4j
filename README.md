@@ -1,6 +1,8 @@
-# tess4j
+# Tess4J Example
 
-This is a simple, _working_ example of optical character recognition (OCR).
+This is a simple, _working_ example of optical character recognition (OCR). This is about showing
+a picture of text to the software and the software determining what the text is, returned in the
+form of a java.lang.String object.
 
 The most popular, open source solution is [Tesseract](https://github.com/tesseract-ocr/tesseract "Tesseract") &copy;,
 but this is a program written in C code.
@@ -16,7 +18,7 @@ Then the [discovery](http://www.microshell.com/programming/java/performing-optic
 of Tess4J available from Maven Central resolved the Mac-specific Tesseract libraries. Still, trying
 to follow the example and advice from that blog post resulted in runtime exceptions,
 due to the default Tesseract english data file not being found. That blog's advice is a hack and
-even the advice by the Tess4J author himself in the feedback comment is not desirable. This codebase
+even the advice by the Tess4J author himself in that blog's feedback comment is not desirable. This codebase
 demonstrates encapsulating the Tesseract data file so that the code _just works_ without bothering with external
 conditions like setting a special system environment variable.
 

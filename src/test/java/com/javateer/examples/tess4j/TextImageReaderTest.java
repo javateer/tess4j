@@ -8,6 +8,7 @@ import com.javateer.examples.tess4j.TextImageReader;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ResourceBundle;
 
 import javax.imageio.ImageIO;
 
@@ -26,6 +27,10 @@ public class TextImageReaderTest {
   @Before
   public void init() {
     tesseract = new Tesseract();
+
+    ResourceBundle resourceBundle = ResourceBundle.getBundle("config");
+    String defaultCharacterWhitelist = resourceBundle.getString("default-character-whitelist");
+    tesseract.setTessVariable("tessedit_char_whitelist", defaultCharacterWhitelist);
 
     /*
      * Tesseract is looking for at least one data file like tessdata/eng.traineddata.
@@ -109,7 +114,7 @@ public class TextImageReaderTest {
 
     //then
     fractionalNumber = fractionalNumber.trim(); // trim() to drop off \n character at end of String
-    assertEquals(3.14159265f, Float.parseFloat(fractionalNumber), 0.14159265f);
+    assertEquals(3.14159265f, Float.parseFloat(fractionalNumber), 0.1415926f);
   }
 
   /*

@@ -1,6 +1,7 @@
 package com.javateer.examples.tess4j;
 
 import java.awt.image.BufferedImage;
+import java.util.ResourceBundle;
 
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
