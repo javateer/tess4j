@@ -25,3 +25,29 @@ conditions like setting a special system environment variable.
 I hope this is reference code you've been looking for. I sure wish someone came along before me
 and volunteered this for us all! I hardly explored the Tess4J API. Therefore, I invite you to help grow
 this codebase with more test-proven examples and explanatory comments, so show me your pull requests.
+
+
+## Prerequisites
+This software still depends on Tesseract being installed. For example, on a Mac:
+
+	brew install tesseract
+## Troubleshooting
+This software was pulled down from GitHub on a Mac that already had installed:
+*   Tesseract 3.04.01_2
+*   Leptonica 1.73
+
+But the build was failing with the message:
+
+> Unable to load library 'tesseract': Native library (darwin/libtesseract.dylib) not found in resource path
+
+After upgrading Tesseract to a more recent release (which also upgraded a more recent Leptonica):
+
+	brew upgrade tesseract
+
+The following revisions are installed on the machine:
+
+	brew list tesseract leptonica
+*   Tesseract 3.05.01
+*   Leptonica 1.74.04_1
+
+Now, this Tess4J Example codebase successfully builds with its tests passing.
